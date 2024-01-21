@@ -19,7 +19,7 @@ jobs:
         with: 
           dotnet-version: '6.0'
 
-      - name: Build project
+      - name: Build project  
         run: dotnet restore; dotnet publish -o site;
 
       - name: create zip package
@@ -32,6 +32,6 @@ jobs:
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           application_name: calculator API
           environment_name: CalculatorAPI-env
-          version_label: Sample #${{ github.run_id }}
+          version_label: ${{ github.run_id }}
           region: eu-north-1
           deployment_package: site.zip
