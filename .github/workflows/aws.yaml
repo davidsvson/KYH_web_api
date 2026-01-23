@@ -1,4 +1,4 @@
-name: Build and push to aws elastic beanstalk
+name: Build and push to aws
 
 on:
   push:
